@@ -23,8 +23,8 @@
 </template>
 
 <script lang="ts">
-import { useTodoStore } from "../stores/todos";
-import { storeToRefs } from "pinia";
+import { useTodoStore } from '../stores/todos';
+import { storeToRefs } from 'pinia';
 export default {
   setup() {
     const store = useTodoStore();
@@ -57,6 +57,7 @@ input {
 }
 
 .action-wrapper {
+  display: flex;
   margin: 0 0 0 auto;
 }
 
