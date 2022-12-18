@@ -1,5 +1,11 @@
 <template>
-  <font-awesome-icon @click="toggleDarkMode" class="pointer" :icon="icon" />
+  <font-awesome-icon
+    v-on:keyup.enter="toggleDarkMode"
+    @click="toggleDarkMode"
+    class="pointer"
+    :icon="icon"
+    tabindex="0"
+  />
   <TodoForm />
   <TodoList />
 </template>
