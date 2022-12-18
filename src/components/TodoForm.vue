@@ -2,6 +2,7 @@
   <form @submit.prevent="addTodoAndClear(todo)">
     <header>
       <label fo="todo-list">Todo List</label>
+      <p>{{ finishedTodos.length }}/{{ todoList.length }} complete</p>
     </header>
     <div class="input-group-wrapper">
       <input
@@ -17,10 +18,12 @@
 <script lang="ts">
 import { ref } from "vue";
 import { useTodoStore } from "../stores/todos";
+import { storeToRefs } from "pinia";
 export default {
   setup() {
     const todo = ref("");
     const store = useTodoStore();
+    const { finishedTodos, todoList } = storeToRefs(store);
 
     const addTodoAndClear = (text: string) => {
       if (text.length === 0) return;
@@ -28,7 +31,7 @@ export default {
       todo.value = "";
     };
 
-    return { addTodoAndClear, todo };
+    return { addTodoAndClear, finishedTodos, todo, todoList };
   },
 };
 </script>
@@ -67,6 +70,12 @@ label {
   font-size: var(--font-size-heading);
 }
 
+header {
+  align-items: baseline;
+  justify-content: space-between;
+  display: flex;
+}
+
 input {
   border: 0.2rem solid var(--color-border);
   border-radius: 0.4rem;
@@ -77,6 +86,10 @@ input {
 
   height: 3.6rem;
   width: 100%;
+}
+
+p {
+  text-align: end;
 }
 
 .input-group-wrapper {
