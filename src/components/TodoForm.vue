@@ -16,85 +16,85 @@
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
-import { useTodoStore } from "../stores/todos";
-import { storeToRefs } from "pinia";
-export default {
-  setup() {
-    const todo = ref("");
-    const store = useTodoStore();
-    const { finishedTodos, todoList } = storeToRefs(store);
+  import { ref } from 'vue';
+  import { useTodoStore } from '../stores/todos';
+  import { storeToRefs } from 'pinia';
+  export default {
+    setup() {
+      const todo = ref('');
+      const store = useTodoStore();
+      const { finishedTodos, todoList } = storeToRefs(store);
 
-    const addTodoAndClear = (text: string) => {
-      if (text.length === 0) return;
-      store.addTodo(text);
-      todo.value = "";
-    };
+      const addTodoAndClear = (text: string) => {
+        if (text.length === 0) return;
+        store.addTodo(text);
+        todo.value = '';
+      };
 
-    return { addTodoAndClear, finishedTodos, todo, todoList };
-  },
-};
+      return { addTodoAndClear, finishedTodos, todo, todoList };
+    },
+  };
 </script>
 
 <style scoped>
-button {
-  align-items: center;
-  background-color: var(--button-background);
-  border: 0.2rem solid var(--color-background-mute);
-  color: var(--button-color);
-  border-radius: 0.4rem;
-  cursor: pointer;
-  display: flex;
-  font-size: 1.6rem;
-  min-height: 100%;
-  padding: 0 2rem;
-}
+  button {
+    align-items: center;
+    background-color: var(--button-background);
+    border: 0.2rem solid var(--color-background-mute);
+    color: var(--button-color);
+    border-radius: 0.4rem;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.6rem;
+    min-height: 100%;
+    padding: 0 2rem;
+  }
 
-button:hover {
-  border-color: var(--vt-c-white);
-  transition: all 0.3s ease-in-out;
-}
+  button:hover {
+    border-color: var(--vt-c-white);
+    transition: all 0.3s ease-in-out;
+  }
 
-button:active {
-  border-color: var(--vt-c-text-dark-2);
-  transition: all 0.1s ease-in-out;
-}
+  button:active {
+    border-color: var(--vt-c-text-dark-2);
+    transition: all 0.1s ease-in-out;
+  }
 
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
-label {
-  font-size: var(--font-size-heading);
-}
+  label {
+    font-size: var(--font-size-heading);
+  }
 
-header {
-  align-items: baseline;
-  justify-content: space-between;
-  display: flex;
-}
+  header {
+    align-items: baseline;
+    justify-content: space-between;
+    display: flex;
+  }
 
-input {
-  border: 0.2rem solid var(--color-border);
-  border-radius: 0.4rem;
+  input {
+    border: 0.2rem solid var(--color-border);
+    border-radius: 0.4rem;
 
-  font-size: var(--font-size-small);
+    font-size: var(--font-size-small);
 
-  padding: 1rem 0.5rem;
+    padding: 1rem 0.5rem;
 
-  height: 3.6rem;
-  width: 100%;
-}
+    height: 3.6rem;
+    width: 100%;
+  }
 
-p {
-  text-align: end;
-}
+  p {
+    text-align: end;
+  }
 
-.input-group-wrapper {
-  display: flex;
-  gap: 2rem;
-  padding: 2rem 0;
-}
+  .input-group-wrapper {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
 </style>
