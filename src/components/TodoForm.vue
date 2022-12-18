@@ -2,7 +2,9 @@
   <form @submit.prevent="addTodoAndClear(todo)">
     <header>
       <label fo="todo-list">Todo List</label>
-      <p>{{ finishedTodos.length }}/{{ todoList.length }} complete</p>
+      <p v-if="todoList.length > 0">
+        {{ finishedTodos.length }}/{{ todoList.length }} complete
+      </p>
     </header>
     <div class="input-group-wrapper">
       <input
