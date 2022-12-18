@@ -39,19 +39,6 @@ export default {
 </script>
 
 <style scoped>
-button {
-  align-items: center;
-  background-color: var(--button-background);
-  border: 0.2rem solid var(--color-border);
-  color: var(--button-color);
-  border-radius: 0.4rem;
-  cursor: pointer;
-  display: flex;
-  font-size: 1.6rem;
-  min-height: 100%;
-  padding: 0 2rem;
-}
-
 button:hover {
   border-color: var(--color-border-hover);
   transition: border 0.1s ease-in-out;

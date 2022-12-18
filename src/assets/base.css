@@ -20,38 +20,49 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: var(--vt-c-white-soft);
 
+  --secondary-green-400: rgb(131, 232, 186);
+  --secondary-green-600: rgb(105, 202, 148);
+
   --font-size-small: 1.6rem;
   --font-size-body: 2.4rem;
   --font-size-heading: 3.6rem;
 
-  --secondary-green-400: rgb(131, 232, 186);
-  --secondary-green-600: rgb(105, 202, 148);
-}
-
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --button-background: var(--vt-c-white-soft);
-  --button-color: var(--vt-c-white);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-  --color-text-active: var(--vt-c-text-light-2);
-
   --section-gap: 160px;
 }
 
-/* Breakpoints:
-  --breakpoint-small: 750px;
-  --breakpoint-medium: 1024px;
-  --breakpoint-large: 1640px;
-*/
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: var(--vt-c-white);
+    --color-background-soft: var(--vt-c-white-soft);
+    --color-background-mute: var(--vt-c-white-mute);
+
+    --button-background: var(--vt-c-white-soft);
+    --button-color: var(--vt-c-white);
+
+    --color-border: var(--vt-c-divider-light-2);
+    --color-border-hover: var(--vt-c-divider-light-1);
+
+    --color-heading: var(--vt-c-text-light-1);
+    --color-text: var(--vt-c-text-light-1);
+    --color-text-active: var(--vt-c-text-light-2);
+  }
+
+  .inverse-theme {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --button-background: var(--vt-c-white-soft);
+    --button-color: var(--vt-c-black);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-2);
+    --color-text: var(--vt-c-text-dark-2);
+    --color-text-active: var(--vt-c-text-dark-1);
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -69,6 +80,39 @@
     --color-text: var(--vt-c-text-dark-2);
     --color-text-active: var(--vt-c-text-dark-1);
   }
+
+  .inverse-theme {
+    --color-background: var(--vt-c-white);
+    --color-background-soft: var(--vt-c-white-soft);
+    --color-background-mute: var(--vt-c-white-mute);
+
+    --button-background: var(--vt-c-white-soft);
+    --button-color: var(--vt-c-white);
+
+    --color-border: var(--vt-c-divider-light-2);
+    --color-border-hover: var(--vt-c-divider-light-1);
+
+    --color-heading: var(--vt-c-text-light-1);
+    --color-text: var(--vt-c-text-light-1);
+    --color-text-active: var(--vt-c-text-light-2);
+  }
+}
+
+button {
+  align-items: center;
+  background-color: var(--button-background);
+  border: 0.2rem solid var(--color-border);
+  color: var(--button-color);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.6rem;
+  min-height: 100%;
+  padding: 0 2rem;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 *,
