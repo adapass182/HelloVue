@@ -16,9 +16,6 @@ module.exports = {
       extends: ['plugin:cypress/recommended'],
     },
   ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-  },
   env: {
     es6: true,
     browser: true,
